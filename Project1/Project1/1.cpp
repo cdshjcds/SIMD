@@ -239,8 +239,25 @@ int main()
 	}
 	time_t start, end;
 	start = clock();
+	normal(m, n, A);
+	end = clock();
+	cout << "Time useage: " << (float)(end - start) / 1000 << " s" << endl;
+	start = clock();
+	normal2(m, n, A);
+	end = clock();
+	cout << "Time useage: " << (float)(end - start) / 1000 << " s" << endl;
+	start = clock();
+	avx3(m, n, A);
+	end = clock();
+	cout << "Time useage: " << (float)(end - start) / 1000 << " s" << endl;
+	start = clock();
+	avx(m, n, A);
+	end = clock();
+	cout << "Time useage: " << (float)(end - start) / 1000 << " s" << endl;
+	start = clock();
 	avx2(m, n, A);
 	end = clock();
+	cout << "Time useage: " << (float)(end - start) / 1000 << " s" << endl;
 	/*
 	for (int i = 0; i < m; i++)
 	{
@@ -248,5 +265,5 @@ int main()
 			cout << A[i][j]<<" ";
 		cout << endl;
 	}*/
-	cout << "Time useage: " << (float)(end - start)/1000 << " s" << endl;
+	
 }
